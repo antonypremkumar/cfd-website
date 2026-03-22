@@ -13,11 +13,21 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<h1>🧑‍🚀 Hello, There!</h1>
+			<h2>Welcome to my C.F.D. website!</h2>
+			<h3>I'm glad you're here. Shall we learn CFD ? 🎉</h3>
 			<p>
-				Welcome to the my blog starter template.
-				This will be a place where I dump everything I learn about simulation.
+    			CFD tries to solve a initial-boundary value problem a partial differential equation.
+				This equation is called the Navier Stokes equation.
+				Numerical methods are used to discretize the NSE and computers are used to solve them on an industrial scale.
+				CFD analyzes fluid flow, heat transfer and associated phenomena such as chemical reactions.
 			</p>
+  <!-- <app-katex-renderer [latex]="'
+  \\rho \\bigg(\\dfrac{\\partial u}{\\partial t} + 
+  (u.\\nabla)u\\bigg) =
+  -\\nabla{p} +
+  \\mu\\nabla^2 u
+  '"></app-katex-renderer>
+</div> -->
 		</main>
 		<Footer />
 	</body>
