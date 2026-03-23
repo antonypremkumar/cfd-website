@@ -45,17 +45,16 @@ $$
 P = \rho \mathrm{R} T
 $$
 
-Let's write temperature in terms of enthalpy
+Let's write temperature in terms of internal energy
 
 $$
 \begin{aligned}
-T & = \dfrac{h}{C_\mathrm{p}} \\
-P & = \rho \mathrm{R} \dfrac{h}{C_\mathrm{p}} \\
-P & = \rho h \dfrac{\mathrm{R}}{C_\mathrm{p}} \\
-& = \rho h \dfrac{C_\mathrm{p}-C_\mathrm{v}}{C_\mathrm{p}} \\
-& = \rho h \bigg(1-\dfrac{C_\mathrm{p}}{C_\mathrm{p}}\bigg) \\
-& = \rho h \bigg(1-\dfrac{1}{\gamma}\bigg) \\
-& = \rho h \bigg(\dfrac{\gamma-1}{\gamma}\bigg) \\
+T & = \dfrac{e}{C_\mathrm{v}} \\
+P & = \rho \mathrm{R} \dfrac{e}{C_\mathrm{v}} \\
+P & = \rho e \dfrac{\mathrm{R}}{C_\mathrm{v}} \\
+& = \rho e \dfrac{C_\mathrm{p}-C_\mathrm{v}}{C_\mathrm{v}} \\
+& = \rho e \bigg(\dfrac{C_\mathrm{p}}{C_\mathrm{v}} - 1\bigg) \\
+& = \rho e \big(\gamma-1\big) \\
 \end{aligned}
 $$
 
@@ -63,9 +62,30 @@ Differentiating both sides.
 
 $$
 \dfrac{\partial P}{\partial t} = 
-\rho\dfrac{\partial h}{\partial t} \bigg(\dfrac{\gamma-1}{\gamma}\bigg) +
-h\dfrac{\partial \rho}{\partial t} \bigg(\dfrac{\gamma-1}{\gamma}\bigg) +
-h\rho\dfrac{\partial}{\partial t} \bigg(\dfrac{\gamma-1}{\gamma}\bigg)
+\big(\gamma-1\big) \bigg( \rho\dfrac{\partial e}{\partial t} +
+e\dfrac{\partial \rho}{\partial t} \bigg) +
+\rho e\dfrac{\partial}{\partial t} \big(\gamma-1\big)
+$$
+
+Now lets express internal energy in terms of total internal energy and kinetic energy
+
+$$
+e=e_\mathrm{t} - \frac{u_i u_i}{2}
+$$
+
+$$
+\begin{aligned}
+\dfrac{\partial P}{\partial t} 
+& = \big(\gamma-1\big) 
+\bigg(e_\mathrm{t}\dfrac{\partial \rho}{\partial t} - \frac{u_i u_i}{2}\dfrac{\partial \rho}{\partial t} + \rho\dfrac{\partial e_\mathrm{t}}{\partial t} - \rho\dfrac{\partial u_i u_i/2}{\partial t} \bigg)
++ \rho e\dfrac{\partial \gamma}{\partial t} \\
+& = \big(\gamma-1\big) 
+\bigg(e_\mathrm{t}\dfrac{\partial \rho}{\partial t} + \rho\dfrac{\partial e_\mathrm{t}}{\partial t} - \frac{u_i u_i}{2}\dfrac{\partial \rho}{\partial t} - \rho\dfrac{\partial u_i u_i/2}{\partial t} \bigg)
++ \rho e\dfrac{\partial \gamma}{\partial t} \\
+& = \big(\gamma-1\big) 
+\bigg(\dfrac{\partial \rho e_\mathrm{t}}{\partial t} - \frac{u_i u_i}{2}\dfrac{\partial \rho}{\partial t} - \rho\dfrac{\partial u_i u_i/2}{\partial t} \bigg)
++ \rho e\dfrac{\partial \gamma}{\partial t} \\
+\end{aligned}
 $$
 
 ### References
