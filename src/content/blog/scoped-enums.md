@@ -42,7 +42,7 @@ chemistryReaders/chemkinReader/chemkinReader.H:81:26: error: 'bool Foam::chemkin
 The magic keyword `class` will make the enum a scoped enum.
 ```
 //src/thermophysicalModels/reactionThermo/chemistryReaders/chemkinReader/chemkinReader.H
-enum enum phase
+enum class phase
 {
     solid,
     liquid,
